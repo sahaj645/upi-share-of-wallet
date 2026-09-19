@@ -1,0 +1,35 @@
+# Paytm UPI Growth Challenge — Round 1 configuration
+# Every number in deliverables must trace to outputs/metrics.json, which is
+# derived using these constants + observed data only.
+
+team_name: TeamName          # TODO: set your registered team name
+
+# Payment-size split (₹). Small ticket is <= this value.
+small_ticket_max: 500
+
+# Group definitions (assigned automatically in ingest.py):
+#   G1 = Paytm is primary app
+#   G2 = another app primary AND Paytm used in last 90 days
+#   G3 = another app primary AND Paytm NOT used in last 90 days
+groups:
+  - G1
+  - G2
+  - G3
+
+# Sizing constant (observed-data sizing only — see A9).
+# AISHE 2023-24 total higher-education enrolment, approximate.
+aishe_enrolment: 45000000    # ~4.5 crore
+
+paths:
+  raw_form: data/raw/form_responses.csv
+  raw_interviews: data/raw/interviews
+  clean_respondents: data/clean/respondents.csv
+  clean_payments: data/clean/payments.csv
+  coding_sheet: data/clean/coding_sheet.csv
+  metrics: outputs/metrics.json
+  charts_dir: outputs/charts
+  codebook: docs/codebook.yaml
+  verification: docs/upi_circle_verification.md
+  voc_template: reference/Paytm_UPI_VOC_Template.xlsx
+  workbook_out: deliverables
+  summary_out: deliverables
