@@ -77,7 +77,7 @@ def run_demo() -> int:
     codebook = yaml.safe_load(open(os.path.join(HERE, "docs", "codebook.yaml"), encoding="utf-8"))
     build_workbook.build_workbook(
         respondents, payments, metrics, codebook,
-        template_path=os.path.join(demo, "no_template.xlsx"),
+        template_path=os.path.join(HERE, cfg["paths"]["voc_template"]),
         out_path=os.path.join(demo, "DEMO_SYNTHETIC_VOC.xlsx"),
         charts_dir=os.path.join(demo, "charts"))
     build_summary.build_summary(

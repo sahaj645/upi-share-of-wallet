@@ -2,7 +2,7 @@
 # Every number in deliverables must trace to outputs/metrics.json, which is
 # derived using these constants + observed data only.
 
-team_name: TeamName          # TODO: set your registered team name
+team_name: Aquaholics        # registered team name
 
 # Payment-size split (₹). Small ticket is <= this value.
 small_ticket_max: 500
