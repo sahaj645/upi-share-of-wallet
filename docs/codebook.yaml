@@ -1,0 +1,49 @@
+# Barrier codebook (applied AFTER collection).
+#
+# Rules (see A6):
+#   - First read ALL open answers and note themes the codebook misses.
+#   - Add a code only if a theme appears in 3+ answers.
+#   - Each row gets one primary code, optionally a secondary.
+#   - Claude Code proposes codes -> `suggested_code`. Sahaj confirms every row's
+#     `final_code`. Only `final_code` is used in analysis.
+#
+# These are STARTER codes, not final. Extend during coding (P5).
+
+version: 0.1
+status: starter   # becomes "confirmed" after Sahaj reviews P5
+
+codes:
+  - id: habit_default
+    label: Habit / default app
+    definition: Uses the other app simply out of habit or because it opened first.
+  - id: merchant_qr
+    label: Merchant QR / acceptance
+    definition: The shop's QR or Soundbox is for another app; pays with whatever the merchant shows.
+  - id: peer_network
+    label: Friends / peers use it
+    definition: Splits and P2P happen on the app friends already use.
+  - id: rewards_cashback
+    label: Rewards / cashback
+    definition: Stays for offers, cashback, scratch cards, or reward points.
+  - id: reliability_failures
+    label: Reliability / failures
+    definition: Cites failed payments, delays, or errors on Paytm.
+  - id: ui_ease
+    label: UI / ease of use
+    definition: Finds another app faster, simpler, or cleaner to use.
+  - id: trust_safety
+    label: Trust / safety
+    definition: Concerns about security, data, or brand trust.
+  - id: onboarding_kyc
+    label: Onboarding / KYC / setup
+    definition: Setup friction — KYC, bank linking, wallet, verification.
+  - id: not_installed
+    label: Not installed / uninstalled
+    definition: Paytm is not on the phone, or was removed.
+  - id: no_reason_given
+    label: No clear reason
+    definition: Answer gives no substantive reason; use sparingly.
+
+# Themes appearing 3+ times with no code above should be added here during P5,
+# with id/label/definition, before being used in analysis.
+new_codes_added_during_coding: []
