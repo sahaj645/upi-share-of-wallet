@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          # docx2pdf needs Word; skip on Linux CI (guarded in code)
+          pip install pandas openpyxl matplotlib pyyaml python-docx jinja2 pytest pypdf
+      - name: Run tests (synthetic fixtures only)
+        run: pytest -q
+      - name: Demo pipeline smoke test
+        run: python run_pipeline.py --demo

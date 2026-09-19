@@ -1,0 +1,9 @@
+pandas
+openpyxl
+matplotlib
+pyyaml
+python-docx
+docx2pdf ; platform_system == "Windows"
+jinja2
+pytest
+pypdf

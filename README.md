@@ -21,10 +21,27 @@ SYNTHETIC.
 
 ```bash
 python --version   # 3.11+
-pip install pandas openpyxl matplotlib pyyaml python-docx docx2pdf jinja2 pytest
+pip install -r requirements.txt
 ```
 
-## Pipeline
+## Run the whole pipeline (one command)
+
+```bash
+python run_pipeline.py
+```
+
+Runs, in order: ingest → code_barriers → analyze → charts → build_workbook →
+build_summary → validate. Each step guards itself if its inputs are missing, so
+it is safe to run before data has landed.
+
+See the chain work on synthetic fixtures (writes to a throwaway `./demo/`, never
+to `deliverables/`):
+
+```bash
+python run_pipeline.py --demo
+```
+
+## Or run each step by hand
 
 ```bash
 python src/ingest.py         # data/raw → data/clean (anonymised)
